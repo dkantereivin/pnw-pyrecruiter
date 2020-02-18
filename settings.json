@@ -1,0 +1,26 @@
+{
+    "sec": {
+        "user": "",
+        "pass": "",
+        "api_key": "",
+        "db_path": "storage.db"
+    },
+    "info": {
+        "alliance": "",
+        "target_alliance": [],
+        "max_inactive": 24144000,
+        "min_cities": 13,
+        "frequency": 140,
+        "exclude": [],
+        "contact_again": 3
+    },
+    "msg": {
+        "subject": "",
+        "content": ""
+    },
+    "READ_ONLY": {
+        "nations": "https://politicsandwar.com/api/nations/?key=",
+        "login": "https://politicsandwar.com/login/",
+        "msg": "https://politicsandwar.com/inbox/message"
+    }
+}

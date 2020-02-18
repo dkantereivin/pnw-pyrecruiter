@@ -94,7 +94,7 @@ class Recruiter:
         if int(nation['minutessinceactive']) > self.settings['info']['max_inactive']:  # too inactive
             return False
         if int(nation['nationid']) in self.settings['info']['exclude']:  # in exclude list
-            return True
+            return False
 
         qry = self.db.execute("SELECT time_sent FROM nations_contacted WHERE nation_id = ?;",
                               (int(nation['nationid']),)).fetchone()

@@ -5,7 +5,7 @@ from typing import List, Dict, Any
 
 import ezgui as eg
 
-from Recruiter import Recruiter
+from pnw import Recruiter
 
 # STATIC
 categories: Dict[str, str] = {
@@ -99,7 +99,7 @@ if opt:
         elif category == 'Reset Changes':
             with open(eg.fileopenbox(), 'w') as file:
                 settings = json.load(file)
-            eg.msg('Successfully reloaded the settings file.')
+            eg.msgbox('Successfully reloaded the settings file.')
 
         elif category == 'Exit':
             break

@@ -8,7 +8,7 @@
 - sqlite3 database for reliable and fast data persistence, as opposed to the traditional text/json/no-persistence techniques
 - actively developed and maintained
 
-*Note: Some bot features may not function correctly due to the temporary captcha addition by the game creator.*
+*All features are currently believed to be working, subject to errors caused by a lack of in game permissions (i.e. captchas on new players)*
 
 ## Usage
 There are three ways to utilize the recruiter:

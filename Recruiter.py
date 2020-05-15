@@ -43,14 +43,17 @@ class Recruiter:
 
         for nation in target_nations:
             try:
-                self.send_message(nation['leader'], conn)
+                time.sleep(self.settings['READ_ONLY']['delay'])
+                self.send_message(nation, conn)
             except Exception:
                 failed += 1
+                print(Exception)
             self.db.execute("INSERT OR REPLACE INTO nations_contacted(nation_id, time_sent) " +
                             "VALUES (?, datetime('now'));",
                             (int(nation['nationid']),))
             self.db.commit()
             print(f"--> Message Sent to {nation['leader']} (id: {nation['nationid']} @ {datetime.today()}")
+        print(f"---- ROUND COMPLETE [Errors: {failed}] ----")
 
     def login(self) -> requests.Session:
         """ Authenticates with login details specified in settings.json and returns a logged in requests session.
@@ -68,12 +71,12 @@ class Recruiter:
 
     def send_message(self, nation: dict, conn: any) -> None:
         payload = {
-            'newconversation': "true",
+            'newconversation': 'true',
             'receiver': nation['leader'],
             'carboncopy': "",
             'subject': self.replace_str_parameters(self.settings['msg']['subject'], nation),
             'body': self.replace_str_parameters(self.settings['msg']['content'], nation),
-            'sndmsg': "Send Message"
+            'sndmsg': 'Send Message'
         }
         conn.post(self.settings['READ_ONLY']['msg'], payload)
 
@@ -134,7 +137,7 @@ class Recruiter:
             'color': nation['color']
         }
         for param in params:
-            text.replace("${" + param + "}", params[param])
+            text.replace("${" + param + "}", str(params[param]))
         return text
 
 

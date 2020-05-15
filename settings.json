@@ -7,7 +7,7 @@
     },
     "info": {
         "alliance": "",
-        "target_alliance": [],
+        "target_alliance": ["None"],
         "max_inactive": 24144000,
         "min_cities": 13,
         "frequency": 140,
@@ -21,6 +21,7 @@
     "READ_ONLY": {
         "nations": "https://politicsandwar.com/api/nations/?key=",
         "login": "https://politicsandwar.com/login/",
-        "msg": "https://politicsandwar.com/inbox/message"
+        "msg": "https://politicsandwar.com/inbox/message",
+        "delay": 0.01
     }
 }

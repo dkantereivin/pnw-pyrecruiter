@@ -24,6 +24,10 @@ Prior to running main.py, you will need to install project dependencies. Otherwi
 To do so, open your terminal and type `pip install -r requirements.txt` in the project folder. Alternatively, install the dependencies manually.
 If you're unsure how to navigate to the project folder, copy the path to the folder and type `cd` followed by the path.
 
+To run, you can simply double click `Recruiter.py`. If it immediately opens and then closes, this is because there are runtime errors when you open the file.
+To troubleshoot and see what these errors are, open it via the command line.
+Open the command line, navigate to the correct directory, and then type `python Recruiter.py`. When errors occur, the script will stop and you will be able to see errors in the command line window.
+
 #### Dependencies: 
 - `requests`
 - `ezgui`, only needed if using `main.py`

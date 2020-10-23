@@ -16,14 +16,26 @@ There are three ways to utilize the recruiter:
 2. As a graphical interface, by executing `main.py`
 3. As a Python package, by importing `Recruiter.py` into your own code. Once you have imported the module, you can choose to pass your own config object (`Dict[str, Any]`) to the `Recruiter` constructor, or pass a custom settings path. Alternatively, follow the below.
 
+## Setup
+To setup the bot, populate `settings.json` as indicate in Settings.
+For non-technical users, consider simply running `main.py`, which offers a graphical interface for completing the setup. 
+
+Prior to running main.py, you will need to install project dependencies. Otherwise, you will experience errors running the bot.
+To do so, open your terminal and type `pip install -r requirements.txt` in the project folder. Alternatively, install the dependencies manually.
+If you're unsure how to navigate to the project folder, copy the path to the folder and type `cd` followed by the path.
+
+#### Dependencies: 
+- `requests`
+- `ezgui`, only needed if using `main.py`
+
 ### Settings
 For all above options, some user settings must be stored the machine running the bot.
 
 To modify settings, edit `settings.json` manually or using the graphical interface. Fill the file with the settings to be applied:
 - user: the username (email) of the account which will be sending messages.
-- pass: the password, in plaintext, for the account. See the **Security** section for more details.
+- pass: the password, in plaintext, for the account. This data is stored locally on your machine and the bot uses an encrypted connection to PnW (HTTPS), so as long as you do not expose your password via the file system, this is no less secure than accessing PnW via the browser.
 - api_key: the API key to be used. This does not need to be the key from the user account sending messages.
-- db_path: the relative path to `storage.db`. Changing the default settings is not reccomended, unless you intend to use your own database.
+- db_path: the relative path to `storage.db`. Changing the default settings is not recommended, unless you intend to use your own database.
 
 - alliance: the name of your alliance.
 - target_alliance: a list of the alliance names to send messages to. Follow the [JSON array](https://www.w3schools.com/js/js_json_arrays.asp) format. You can specify as many alliances as you would like; to target users with no alliance, add `"None"`.

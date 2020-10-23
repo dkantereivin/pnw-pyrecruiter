@@ -1,0 +1,4 @@
+# Automatic install gets all possible required packages.
+# For usage without the gui (only running Recruiter.py), ezgui does not need to be installed.
+requests
+ezgui

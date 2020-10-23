@@ -137,7 +137,7 @@ class Recruiter:
             'color': nation['color']
         }
         for param in params:
-            text.replace("${" + param + "}", str(params[param]))
+            text = text.replace("${" + param + "}", str(params[param]))
         return text
 
 
